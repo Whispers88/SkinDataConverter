@@ -1,0 +1,5 @@
+The skin data converter tool is a python based package that converts your imported skins json files from skinbox, xskins and skincontroller to the required format for skinner.
+
+1. Run the Skin Data Converter.exe
+2. Select your JSON file from skinbox (config\skinbox.json), xskins (data\XDataSystem\XSkinMenu\Skins.json) or Skin Controller (data\SkinController\Workshopskins.json)
+3. Copy the output into your (config\skinner.json)
