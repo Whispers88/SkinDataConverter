@@ -11,16 +11,17 @@ def convert_json(data):
                     new_data["Imported Skins List"][str(value)] = {}
             return new_data
         else:
-            if isinstance(next(iter(data.items())), str):
-                for key, values in data.items():
-                    for value in values:
-                        new_data["Imported Skins List"][str(value)] = {}
+            if "Skins" in data: #Umod Skins
+                for value in data["Skins"]:
+                    for skin in value["Skins"]:
+                        new_data["Imported Skins List"][str(skin)] = {}
+                return new_data
             else:
                 for key, values in data.items():
                     for value in values:
-                        if(value["SkinID"] != 0 and value["SkinID"] > 100000):
-                            new_data["Imported Skins List"][value["SkinID"]] = {}        
-        return new_data
+                        ["Imported Skins List"][str(value)] = {}
+            return new_data
+        
     elif isinstance(data, list) and all(isinstance(item, dict) for item in data):
         for item in data:
             if "SkinID" in item:
